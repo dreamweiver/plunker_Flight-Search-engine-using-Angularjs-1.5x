@@ -1,0 +1,238 @@
+/* Styles go here */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing:border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-size: 75%;
+  font-family: "Trebuchet MS", Arial, Tahoma, sans-serif;
+  color: #333;
+  padding-top: 10px;
+}
+
+.col {
+  float: left;
+}
+
+.col1 {
+  width: 40%;
+}
+.col2 {
+  width: 60%;
+}
+
+[class*='col'] {
+  padding-right: 20px;
+}
+[class*='col']:last-of-type {
+  padding-right: 0;
+}
+
+.main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  color: #363636;
+  font-family: "Droid Serif", Georgia, serif;
+  font-size: 2.6em;
+  line-height: 1.8em;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 12px 0;
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  text-transform: none;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  text-transform: none;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  text-transform: none;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  text-transform: none;
+}
+
+.route {
+  text-transform:uppercase;
+  margin-left:30%;
+}
+
+.container .trip .airModel {
+  opacity:0.5;
+}
+
+input[type='text'] {
+  text-transform: uppercase;
+  display: block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dedede;
+  margin: 10px;
+  font-size: 1.2em;
+  padding-left:5px;
+  line-height:1.5;
+  width: 70%;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #777;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+  transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+  -webkit-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+  -moz-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+  -o-transition: border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+}
+
+.main .sidebar .tab .date {
+    background: url("https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png") no-repeat rgb(255, 255, 255);
+    background-size: 22px;
+    background-position: right;
+    cursor:pointer;
+}
+
+.search, .floatRight button {
+  margin: 10px 5px 0 10px;
+  background-color: #999999;
+  border: 1px solid #999999;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: "BrixSansBold", Arial, Helvetica, sans-serif;
+  padding: 8px 35px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+}
+
+.search:hover,.floatRight button:hover {
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  opacity: 0.9;
+  color: #fff;
+  text-decoration: none;
+}
+
+label,span.amber{
+   margin: 10px;
+}
+
+.sidebar .tab .rangeSlider {
+  margin-left:10px;
+  margin-right:10px;
+}
+
+#ui-datepicker-div{
+  z-index:2 !important;
+}
+
+.tabs {
+  list-style: none;
+}
+
+.tabs li {
+  display: inline;
+}
+
+.tab,
+.tabs li a {
+  border: 1px solid #ccc;
+}
+
+.tabs li a {
+  color: black;
+  float: left;
+  display: block;
+  padding: 4px 10px;
+  margin-left: -1px;
+  position: relative;
+  left: 1px;
+  background: white;
+  text-decoration: none;
+}
+
+
+.sidebar .tabs li .highlight {
+  background: #ccc;
+}
+
+.group:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.sidebar {
+  box-sizing: border-box;
+}
+
+.floatRight {
+  float: right;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.container .trip .price {
+  font-size: 20pt;
+}
+
+.trip {
+  border: 1px solid black;
+}
+
+.trip .floatRight button{
+    margin-top: 44px;
+    vertical-align: top;
+    font-size: 12px;
+     background-color: #2aabd2;
+  border: 1px solid #2aabd2;
+width:120px;
+   
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.search-error{
+  font-size: 21pt;
+}
+
+.amber {
+  color: red;
+}

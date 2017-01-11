@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script data-require="angularjs@1.2.15" data-semver="1.2.15" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+  <script src="http://danielcrisp.github.io/angular-rangeslider/angular.rangeSlider.js"></script>
+  <script src="http://huei90.github.io/angular-validation/dist/angular-validation.js"></script>
+  <script src="http://huei90.github.io/angular-validation/dist/angular-validation-rule.js"></script>
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="http://danielcrisp.github.io/angular-rangeslider/angular.rangeSlider.css">
+  
+  <script src="app.js"></script>
+  <script src="flightSearchCtrl.js"></script>
+  <script src="flightService.js"></script>
+  <script src="dateTimePickerDirective.js"></script>
+</head>
+
+<body data-ng-app="flightSearch">
+  <div class="main" ng-controller="flightSearchCtrl">
+    <h1 class=header>Flight Search Engine</h1>
+    <div class="amber search-error" ng-show="!clear && flightData.length == 0">No Flights available for given search criteria!!!</div>
+    <section class="col col1 sidebar">
+      <ul class="tabs group">
+        <li ng-click="roundTrip=false;"><a href="#box-one" ng-class="{'highlight':!roundTrip}">One Way</a></li>
+        <li ng-click="roundTrip=true;"><a href="#box-two" ng-class="{'highlight':roundTrip}">Two Way</a></li>
+      </ul>
+      <div class="tab">
+        <form ng-submit="search(origin,destination)" name="form">
+          <input type="text" name="origin" ng-model="origin" placeholder="Enter Origin City" required/>
+          <span class ="amber" ng-show="(form.origin.$dirty || submitted) && form.origin.$error.required">
+             Origin City is Required
+          </span>
+          <input type="text" name="departure" ng-model="destination" placeholder="Enter Destination City" required/>
+          <span  class ="amber" ng-show="(form.departure.$dirty || submitted) && form.departure.$error.required">
+            Departure City is Required
+          </span>
+          <div>
+          <input type="text" name="departureDt" class="date" placeholder="Departure Date" ng-model="departureDate" datepicker required/>
+          <span class ="amber"  ng-show="(form.departureDt.$dirty || submitted) && form.departureDt.$error.required">
+             Departure Date is Required
+          </span>
+          </div>
+          <div ng-if="roundTrip">
+            <input type="text" name="returnDt" class="date" placeholder="Return Date" ng-model="returnDate" datepicker required/>
+            <span  class ="amber" ng-show="(form.returnDt.$dirty || submitted || roundTrip)  && form.returnDt.$error.required">
+               Return Date is Required
+            </span>
+          </div>
+          <div>
+            <label for="passengers">Passengers:</label>
+            <select ng-model="count" id="passengers" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+          <button class="search">search</button>
+          <div class="rangeSlider">
+            <h4>Refine Flight Search</h4>
+            <div range-slider min="0" max="10000" model-min="range.minPrice" step="1000" model-max="range.maxPrice" filter="currency:'Rs'"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="col  col2 container" ng-if="!clear">
+      <h1 class="route"><span>{{origin}} > {{destination}}</span><span ng-show="roundTrip"> {{origin}}</span></h1>
+      <div>
+        <div>Departure Date: {{departureDate}}</div>
+        <div ng-show="roundTrip">Return Date: {{returnDate}} </div>
+        <div>Passengers count: {{count}}</div>
+      </div>
+      <div class="trip" ng-repeat="trips in flightData | filter:filterRange">
+        <div class="floatRight" >
+          <img ng-src="{{trips.imgUrl}}" alt="{{trips.airline}}" />
+          <button ng-click="bookingStatus = 'BOOKED!!!'" ng-bind="bookingStatus"></button>
+        </div>
+        <div>
+          <div class="price">Rs.{{trips.price}}</div>
+          <div class="airModel">{{trips.airline}}</div>
+          <div>{{trips.date}}</div>
+          <div>{{trips.from}} > {{trips.to}}</div>
+          <div>Depart :{{trips.departTime}}</div>
+          <div>Arrive :{{trips.arriveTime}}</div>
+          <div>seats left: {{trips.seats}}</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

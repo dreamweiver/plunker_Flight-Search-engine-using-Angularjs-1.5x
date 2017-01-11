@@ -1,0 +1,99 @@
+{
+  "data": [{
+    "airline": "Airindia 737",
+    "imgURL": "http://www.newsread.in/wp-content/uploads/2015/07/Air-India-Logo-480x470.jpg",
+    "from": "BLR",
+    "to": "DEL",
+    "detail": [{
+      "date": "2016-05-30",
+      "price": "3900",
+      "departTime": "12:00 PM",
+      "arriveTime": "14:00 PM",
+      "seats":"10"
+    }, {
+      "date": "2016-05-30",
+      "price": "3000",
+      "departTime": "17:30 PM",
+      "arriveTime": "19:30 PM",
+      "seats":"3"
+    }, {
+      "date": "2016-06-01",
+      "price": "2100",
+      "departTime": "09:00 AM",
+      "arriveTime": "11:00 AM",
+      "seats":"7"
+    }]
+  }, {
+    "airline": "Airindia 737",
+    "imgURL": "http://www.newsread.in/wp-content/uploads/2015/07/Air-India-Logo-480x470.jpg",
+    "from": "DEL",
+    "to": "BLR",
+    "detail": [{
+      "date": "2016-05-30",
+      "price": "3900",
+      "departTime": "08:10 AM",
+      "arriveTime": "10:10 AM",
+      "seats":"5"
+    }, {
+      "date": "2016-05-30",
+      "price": "3000",
+      "departTime": "15:45 PM",
+      "arriveTime": "17:45 PM",
+      "seats":"1"
+    }, {
+      "date": "2016-06-01",
+      "price": "2190",
+      "departTime": "19:20 PM",
+      "arriveTime": "21:20 PM",
+      "seats":"12"
+    }]
+  }, {
+    "airline": "Indigo Airbus",
+    "imgURL": "https://upload.wikimedia.org/wikipedia/en/9/93/IndiGo_Logo.jpg",
+    "from": "BLR",
+    "to": "DEL",
+    "detail": [{
+      "date": "2016-05-30",
+      "price": "3000",
+      "departTime": "09:00 AM",
+      "arriveTime": "10:50 AM",
+      "seats":"3"
+    }, {
+      "date": "2016-05-30",
+      "price": "2910",
+      "departTime": "14:00 PM",
+      "arriveTime": "15:50 PM",
+      "seats":"5"
+    }, {
+      "date": "2016-06-01",
+      "price": "3180",
+      "departTime": "21:10 AM",
+      "arriveTime": "23:00 AM",
+      "seats":"12"
+    }]
+  }, {
+    "airline": "Indigo Airbus",
+    "imgURL": "https://upload.wikimedia.org/wikipedia/en/9/93/IndiGo_Logo.jpg",
+    "from": "DEL",
+    "to": "BLR",
+    "detail": [{
+      "date": "2016-05-30",
+      "price": "2820",
+      "departTime": "07:50 AM",
+      "arriveTime": "09:40 AM",
+      "seats":"7"
+    }, {
+      "date": "2016-05-30",
+      "price": "2901",
+      "departTime": "11:00 AM",
+      "arriveTime": "13:10 PM",
+      "seats":"21"
+    }, {
+      "date": "2016-06-01",
+      "price": "3000",
+      "departTime": "15:20 PM",
+      "arriveTime": "17:10 PM",
+      "seats":"3"
+    }]
+  }]
+}
